@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { useRealtimeAgent } from './hooks/';
 import { createDisplayOutputTool } from './tools';
+import AppHeader from './components/AppHeader';
 import Output from './components/Output';
 import './App.css';
 
@@ -19,12 +20,12 @@ function App() {
 
 
   return (
-    <>
+    <div className='App'>
+      <AppHeader />
       <main>
-        <h1>OpenAI Realtime Agent Deployment Spike 01</h1>
         <Output {...agentOutput} />
       </main>
-    </>
+    </div>
   );
 }
 
