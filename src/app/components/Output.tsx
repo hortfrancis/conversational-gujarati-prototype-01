@@ -10,13 +10,46 @@ export default function Output({
   gujaratiText = ''
 }: OutputProps) {
 
+  if (!englishText || !phoneticGujaratiText || !gujaratiText) {
+    return null;
+  }
+
   return (
-    <div>
-      <p><i>English:</i> <strong>{englishText}</strong></p>
-      <p><i>Phonetic Gujarati:</i> <strong>{phoneticGujaratiText}</strong></p>
-      <p><i>Gujarati:</i> <strong>{gujaratiText}</strong></p>
+    <div className="w-full  p-4 sm:p-5 space-y-4">
+      <dl className="space-y-4">
+        <div className="space-y-1">
+          <dt className="text-sm italic tracking-wide text-zinc-500 dark:text-zinc-400">English</dt>
+          <dd className="text-base leading-relaxed text-zinc-900 dark:text-zinc-100 break-words whitespace-pre-wrap">
+            {englishText ? (
+              <strong className="font-medium">{englishText}</strong>
+            ) : (
+              <span className="text-zinc-400 italic">...</span>
+            )}
+          </dd>
+        </div>
+
+        <div className="space-y-1">
+          <dt className="text-sm italic tracking-wide text-zinc-500 dark:text-zinc-400">Phonetic</dt>
+          <dd className="text-base leading-relaxed text-zinc-900 break-words whitespace-pre-wrap">
+            {phoneticGujaratiText ? (
+              <strong className="font-medium italic">{phoneticGujaratiText}</strong>
+            ) : (
+              <span className="text-zinc-400 italic">...</span>
+            )}
+          </dd>
+        </div>
+
+        <div className="space-y-1">
+          <dt className="text-sm italic tracking-wide text-zinc-500 dark:text-zinc-400">Gujarati</dt>
+          <dd className="text-lg leading-relaxed text-zinc-900 break-words whitespace-pre-wrap font-serif" lang="gu">
+            {gujaratiText ? (
+              <strong className="font-semibold">{gujaratiText}</strong>
+            ) : (
+              <span className="text-zinc-400 italic">...</span>
+            )}
+          </dd>
+        </div>
+      </dl>
     </div>
-
-
   );
 };

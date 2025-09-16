@@ -6,15 +6,15 @@ import Output from './components/Output';
 import './App.css';
 
 function App() {
-  const [agentOutput, setAgentOutput] = useState({
+  const [translationPhrase, setTranslationPhrase] = useState({
     englishText: '',
     phoneticGujaratiText: '',
     gujaratiText: ''
   });
 
   const tools = useMemo(() => {
-    return [createDisplayOutputTool(setAgentOutput)];
-  }, [setAgentOutput]);
+    return [createDisplayOutputTool(setTranslationPhrase)];
+  }, [setTranslationPhrase]);
 
   useRealtimeAgent(tools);
 
@@ -23,7 +23,7 @@ function App() {
     <div className='App'>
       <AppHeader />
       <main>
-        <Output {...agentOutput} />
+        <Output {...translationPhrase} />
       </main>
     </div>
   );
