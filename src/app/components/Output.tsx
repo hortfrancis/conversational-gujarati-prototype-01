@@ -18,8 +18,8 @@ export default function Output({
     <div className="w-full  p-4 sm:p-5 space-y-4">
       <dl className="space-y-4">
         <div className="space-y-1">
-          <dt className="text-sm italic tracking-wide text-zinc-500 dark:text-zinc-400">English</dt>
-          <dd className="text-base leading-relaxed text-zinc-900 dark:text-zinc-100 break-words whitespace-pre-wrap">
+          <dt className="text-sm italic tracking-wide text-zinc-500">English</dt>
+          <dd className="text-base leading-relaxed text-zinc-900 break-words whitespace-pre-wrap">
             {englishText ? (
               <strong className="font-medium">{englishText}</strong>
             ) : (
@@ -29,7 +29,7 @@ export default function Output({
         </div>
 
         <div className="space-y-1">
-          <dt className="text-sm italic tracking-wide text-zinc-500 dark:text-zinc-400">Phonetic</dt>
+          <dt className="text-sm italic tracking-wide text-zinc-500">Phonetic</dt>
           <dd className="text-base leading-relaxed text-zinc-900 break-words whitespace-pre-wrap">
             {phoneticGujaratiText ? (
               <strong className="font-medium italic">{phoneticGujaratiText}</strong>
@@ -40,7 +40,7 @@ export default function Output({
         </div>
 
         <div className="space-y-1">
-          <dt className="text-sm italic tracking-wide text-zinc-500 dark:text-zinc-400">Gujarati</dt>
+          <dt className="text-sm italic tracking-wide text-zinc-500">Gujarati</dt>
           <dd className="text-lg leading-relaxed text-zinc-900 break-words whitespace-pre-wrap font-serif" lang="gu">
             {gujaratiText ? (
               <strong className="font-semibold">{gujaratiText}</strong>

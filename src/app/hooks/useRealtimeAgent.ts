@@ -38,7 +38,11 @@ function useRealtimeAgent(tools: RealtimeAgentTools) {
       }
     };
 
-    connectSession();
+    connectSession()
+      .then(() => {
+        // Adding this means the agent isn't waiting for the user to initiate the conversation. 
+        session.sendMessage("Conversation started. Please greet the user and introduce yourself.");
+      });
 
     session.on('history_updated', (history) => {
       // Log the session history to the console whenever it updates. 
