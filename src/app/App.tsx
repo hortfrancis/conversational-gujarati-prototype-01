@@ -2,10 +2,10 @@ import { useMemo, useState } from 'react';
 import { useRealtimeAgent } from './hooks/';
 import { createDisplayOutputTool, createProvidePronunciationFeedbackTool } from './tools';
 import AppHeader from './components/AppHeader';
+import Main from './components/Main';
 import Output from './components/Output';
 import PronunciationFeedback from './components/PronunciationFeedback';
 import './App.css';
-
 
 function App() {
   const [translationPhrase, setTranslationPhrase] = useState({
@@ -28,10 +28,10 @@ function App() {
   return (
     <div className='App'>
       <AppHeader />
-      <main className="flex flex-col gap-10 mt-4">
+      <Main>
         <Output {...translationPhrase} />
         <PronunciationFeedback feedbackText={pronunciationFeedback} />
-      </main>
+      </Main>
     </div>
   );
 }
