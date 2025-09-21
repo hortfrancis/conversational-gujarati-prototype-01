@@ -36,7 +36,7 @@ display_output({
 
 This tool allows you to rate the user's pronunciation on a scale from 1 to 3, where 1 is poor and 3 is excellent. Use this tool after the user has spoken a phrase in Gujarati, to give them feedback on how well they pronounced it. 
 
-You should rate the user's pronunciation each time they speak a phrase in Gujarati. 
+You should rate the user's pronunciation each time they speak a phrase in Gujarati. The return from this tool will tell you when you should move on to another phrase.
 
 For example, if the user pronounced "Kem cho?" perfectly, you would call the tool like this:
 

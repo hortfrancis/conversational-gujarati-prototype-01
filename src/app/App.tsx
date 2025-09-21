@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useRealtimeAgent } from './hooks';
 import {
   createDisplayOutputTool,
@@ -30,6 +30,19 @@ function App() {
   }, [setTranslationPhrase]);
 
   useRealtimeAgent(tools);
+
+  // When translation phrase changes, clear pronunciation feedback & rating.
+  useEffect(() => {
+    setPronunciationFeedback('');
+    setPronunciationRating(0);
+  }, [translationPhrase]);
+
+  // If the stars are 3, clear the feedback, as the user has pronounced it well.
+  useEffect(() => {
+    if (pronunciationRating === 3) {
+      setPronunciationFeedback('');
+    }
+  }, [pronunciationRating]);
 
   return (
     <div className='App'>
