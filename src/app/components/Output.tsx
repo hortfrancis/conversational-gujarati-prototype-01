@@ -15,7 +15,7 @@ export default function Output({
   }
 
   return (
-    <div className="w-full  p-4 sm:p-5 space-y-4">
+    <div className="w-full p-4 sm:p-5 space-y-4">
       <dl className="space-y-4">
         <div className="space-y-1">
           <dt className="text-sm italic tracking-wide text-zinc-500">English</dt>
@@ -41,7 +41,7 @@ export default function Output({
 
         <div className="space-y-1">
           <dt className="text-sm italic tracking-wide text-zinc-500">Gujarati</dt>
-          <dd className="text-lg leading-relaxed text-zinc-900 break-words whitespace-pre-wrap font-serif" lang="gu">
+          <dd className="text-base leading-relaxed text-zinc-900 break-words whitespace-pre-wrap font-serif" lang="gu">
             {gujaratiText ? (
               <strong className="font-semibold">{gujaratiText}</strong>
             ) : (
