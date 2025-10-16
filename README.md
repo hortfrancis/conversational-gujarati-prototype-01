@@ -1,5 +1,7 @@
 # Conversational Gujarati - prototype 01
 
+Deployed live at:  [conversational-gujarati-prototype-01.alex-hortfrancis.workers.dev](https://conversational-gujarati-prototype-01.alex-hortfrancis.workers.dev/)
+
 Prototype for a language learning app that helps users learn to speak Gujarati.
 
 The project uses OpenAI's Agents SDK & Realtime API, with React, Vite, Hono, and Cloudflare Workers.
