@@ -44,6 +44,11 @@ Create a `.dev.vars` file in the root directory and add your OpenAI API key:
 OPENAI_API_KEY=your_openai_api_key
 ```
 
+> [!IMPORTANT]
+> You need to set up billing on your OpenAI account, and add some credit, to use the Realtime API. 
+> 
+> If you don't do this, the Realtime connection will fail to initialise.
+
 ## Running the project locally
 
 Start the development server:
