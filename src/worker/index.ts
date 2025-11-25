@@ -38,7 +38,9 @@ app.get("/api/ephemeral-key", async (context) => {
   // http://hono.dev/docs/api/context
   const OPENAI_API_KEY = context.env.OPENAI_API_KEY;
   if (!OPENAI_API_KEY) {
-    return context.json({ error: "OPENAI_API_KEY is not set in environment." }, 500);
+    const errorMsg = "OPENAI_API_KEY is not set in environment.";
+    console.error(errorMsg);
+    return context.json({ error: errorMsg }, 500);
   }
 
   const endpoint = "https://api.openai.com/v1/realtime/client_secrets";
@@ -62,18 +64,24 @@ app.get("/api/ephemeral-key", async (context) => {
 
     if (!response.ok) {
       const errorMsg = "Failed to fetch ephemeral key from OpenAI.";
+      console.error(errorMsg);
+      console.error("Response status:", response.status, "\nResponse status text:", response.statusText);
+      console.error("Response body:", await response.text()); // (Empties stream)
       return context.json({ error: errorMsg }, 502);
     }
 
     const data: OpenAIEphemeralApiKeyResponseData = await response.json();
     if (!data.value) {
-      return context.json({ error: "No ephemeral key returned from OpenAI." }, 502);
+      const errorMsg = "No ephemeral key returned from OpenAI.";
+      console.error(errorMsg);
+      return context.json({ error: errorMsg }, 502);
     }
 
     return context.json({ data }); // Success case 
 
   } catch (err: unknown) {
     const errorMessage = err instanceof Error ? err.message : "Unknown error occurred.";
+    console.error("Error fetching ephemeral key:", errorMessage);
     return context.json({ error: errorMessage }, 502);
   }
 });
