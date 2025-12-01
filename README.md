@@ -93,7 +93,24 @@ This should create a new Workers deployment, available at the default URL of `ht
 
 The URL will be printed in the terminal after deployment.
 
-Check Cloudflare's documentation for more info on [deploying Workers](https://developers.cloudflare.com/workers/).
+### Add your OpenAI API key 
+
+You will need to add your OpenAI API key to the deployed Cloudflare Worker. You can do this in the [Cloudflare dashboard](https://dash.cloudflare.com/).  
+
+- Go to "Workers & Pages" (in the left sidebar)
+- Find the deployed Workers instance in the list & click the name
+- Go to the "Settings" tab of the Worker instance
+  - Scroll down to the "Variables and Secrets" section
+  - Click "Add"
+  - In the "Variables and Secrets" panel:
+    - "Type" = "Secret"
+    - "Variable name" = `OPENAI_API_KEY`
+    - "Value" = your API key
+  - Click "Deploy"
+
+This will redeploy your Workers instance with the OpenAI API key as a environment secret. 
+
+Cloudflare's own documentation also covers [adding secrets to Workers](https://developers.cloudflare.com/workers/configuration/environment-variables/#add-environment-variables-via-the-dashboard).
 
 ## Additional Resources
 
